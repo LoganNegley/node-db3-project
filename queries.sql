@@ -20,5 +20,9 @@ WHERE OrderId = 10251
 ORDER By ProductName DESC 
 
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
-SELECT OrderId, CompanyName, LastName
-FROM []
+SELECT [Order].id, CompanyName, LastName
+FROM [Order]
+JOIN [Employee]
+ON Employee.id = [Order].EmployeeId
+JOIN Customer 
+ON Customer.Id = [Order].CustomerId
